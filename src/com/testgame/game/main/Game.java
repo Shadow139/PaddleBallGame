@@ -33,7 +33,6 @@ public class Game extends JPanel implements Runnable {
         requestFocus();
 
         System.out.println("Game created sucessfully!");
-
     }
 
     private void initInput(){
