@@ -3,6 +3,7 @@ package com.testgame.game.main;
 import javax.imageio.ImageIO;
 import java.applet.Applet;
 import java.applet.AudioClip;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
@@ -12,12 +13,22 @@ import java.net.URL;
  */
 public class Resources {
 
-    public static BufferedImage welcome, icon;
+    public static BufferedImage welcome, icon , line;
+    public static AudioClip hit, bounce;
+    public static Color darkBlue,darkRed;
 
     public static void load(){
         System.out.println("Loading Resources!");
+
         welcome = loadImage("welcome.png");
         icon = loadImage("iconimage.png");
+        line = loadImage("line.png");
+
+        hit = loadSound("hit.wav");
+        bounce = loadSound("bounce.wav");
+
+        darkBlue = new Color(25,83,105);
+        darkRed = new Color(105,13,13);
 
     }
 

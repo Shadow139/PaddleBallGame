@@ -6,9 +6,9 @@ import javax.swing.*;
  * Created by cloud99_9 on 27.10.14.
  */
 public class GameMain {
-    private static final String GAME_TITLE = "Test Game";
+    private static final String GAME_TITLE = "Paddle Ball";
     public static final int GAME_WIDTH = 800;
-    public static final int GAME_HEIGHT= 600;
+    public static final int GAME_HEIGHT= 450;
     public static Game game;
 
     public static void main(String[] args){
