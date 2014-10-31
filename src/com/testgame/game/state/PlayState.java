@@ -1,5 +1,7 @@
 package com.testgame.game.state;
 
+import com.testgame.game.main.Game;
+import com.testgame.game.main.GameMain;
 import com.testgame.game.main.Resources;
 
 import java.awt.*;
@@ -7,9 +9,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 /**
- * Created by cloud99_9 on 27.10.14.
+ * Created by Hollow on 31.10.14.
  */
-public class MenuState extends State {
+public class PlayState extends State {
     @Override
     public void init() {
 
@@ -22,14 +24,18 @@ public class MenuState extends State {
 
     @Override
     public void render(Graphics g) {
-        //System.out.println("drawing!");
-        g.drawImage(Resources.welcome,0,0,null);
-    }
+        g.setColor(Resources.darkBlue);
+        g.fillRect(0,0, GameMain.GAME_WIDTH,GameMain.GAME_HEIGHT);
+        g.setColor(Resources.darkRed);
+        g.fillRect(GameMain.GAME_WIDTH/2, 0, GameMain.GAME_WIDTH/2,GameMain.GAME_HEIGHT);
 
+        g.drawImage(Resources.line,(GameMain.GAME_WIDTH/2)-2,0,null);
+
+    }
 
     @Override
     public void onClick(MouseEvent e) {
-        setCurrentState(new PlayState());
+
     }
 
     @Override
