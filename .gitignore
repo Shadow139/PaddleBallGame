@@ -15,3 +15,4 @@ out/production/PaddleBall/com/testgame/game/state/LoadState.class
 out/production/PaddleBall/com/testgame/game/state/MenuState.class
 out/production/PaddleBall/com/testgame/game/state/State.class
 out/production/PaddleBall/com/testgame/game/state/PlayState.class
+out/production/PaddleBall/com/testgame/game/model/Paddle.class
