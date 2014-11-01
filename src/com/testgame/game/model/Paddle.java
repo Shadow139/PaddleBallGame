@@ -10,7 +10,7 @@ public class Paddle {
     private int x,y,width,height,velY;
     private Rectangle rectangle;
 
-    public Paddle(int height, int x, int y, int width) {
+    public Paddle(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;

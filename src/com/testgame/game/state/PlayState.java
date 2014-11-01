@@ -40,7 +40,10 @@ public class PlayState extends State {
 
         g.setColor(Color.white);
         g.fillRect(paddleLeft.getX(),paddleLeft.getY(),paddleLeft.getWidth(),paddleLeft.getHeight());
+        //System.out.println("paddleLeft: x: " + paddleLeft.getX() + "y: " + paddleLeft.getY()+ "width: " + paddleLeft.getWidth()+ "height: " + paddleLeft.getHeight());
         g.fillRect(paddleRight.getX(),paddleRight.getY(),paddleRight.getWidth(),paddleRight.getHeight());
+        //System.out.println("paddleRight: x: " + paddleRight.getX() + "y: " + paddleRight.getY()+ "width: " + paddleRight.getWidth()+ "height: " + paddleRight.getHeight());
+
     }
 
     @Override
