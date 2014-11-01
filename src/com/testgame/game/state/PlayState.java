@@ -18,10 +18,15 @@ public class PlayState extends State {
     private static final int PADDLE_WIDTH = 15;
     private static final int PADDLE_HEIGHT = 60;
 
+    private int playerScore = 0;
+    private Font scoreFont;
+
     @Override
     public void init() {
         paddleLeft = new Paddle(0,195,PADDLE_WIDTH,PADDLE_HEIGHT);
         paddleRight = new Paddle(785,195,PADDLE_WIDTH,PADDLE_HEIGHT);
+
+        scoreFont = new Font("SansSerif",Font.BOLD,25);
     }
 
     @Override
@@ -46,6 +51,8 @@ public class PlayState extends State {
         g.fillRect(paddleRight.getX(), paddleRight.getY(), paddleRight.getWidth(), paddleRight.getHeight());
         //System.out.println("paddleRight: x: " + paddleRight.getX() + "y: " + paddleRight.getY()+ "width: " + paddleRight.getWidth()+ "height: " + paddleRight.getHeight());
 
+        g.setFont(scoreFont);
+        g.drawString("" + playerScore,350,40);
     }
 
     @Override
