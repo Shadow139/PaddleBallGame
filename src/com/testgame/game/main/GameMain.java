@@ -25,6 +25,9 @@ public class GameMain {
         frame.setVisible(true);
         frame.setIconImage(Resources.icon);
 
+        game.requestFocus();
+
+
         System.out.println("Main finished!");
 
     }
