@@ -27,13 +27,12 @@ public class Game extends JPanel implements Runnable {
 
         this.gameHeight = gameHeight;
         this.gameWidth = gameWidth;
-        setPreferredSize(new Dimension(gameWidth,gameHeight));
-        setBackground(Color.BLACK);
-        setFocusable(true);
-        requestFocus();
+        this.setPreferredSize(new Dimension(gameWidth, gameHeight));
+        this.setBackground(Color.BLACK);
+        this.setFocusable(true);
+        this.requestFocus(); 
 
         System.out.println("Game created sucessfully!");
-
     }
 
     private void initInput(){
