@@ -3,6 +3,7 @@ package com.testgame.game.state;
 import com.testgame.game.main.Game;
 import com.testgame.game.main.GameMain;
 import com.testgame.game.main.Resources;
+import com.testgame.game.model.Ball;
 import com.testgame.game.model.Paddle;
 
 import java.awt.*;
@@ -18,6 +19,9 @@ public class PlayState extends State {
     private static final int PADDLE_WIDTH = 15;
     private static final int PADDLE_HEIGHT = 60;
 
+    private Ball ball;
+    private static  final int BALL_SIZE = 20;
+
     private int playerScore = 0;
     private Font scoreFont;
 
@@ -26,6 +30,8 @@ public class PlayState extends State {
         paddleLeft = new Paddle(0,195,PADDLE_WIDTH,PADDLE_HEIGHT);
         paddleRight = new Paddle(785,195,PADDLE_WIDTH,PADDLE_HEIGHT);
 
+        ball = new Ball(300,200,BALL_SIZE,BALL_SIZE);
+
         scoreFont = new Font("SansSerif",Font.BOLD,25);
     }
 
@@ -33,6 +39,20 @@ public class PlayState extends State {
     public void update() {
         paddleRight.update();
         paddleLeft.update();
+        ball.update();
+
+        if (ballCollides(paddleLeft)) {
+            playerScore++;
+            ball.onCollideWith(paddleLeft);
+            Resources.hit.play();
+        } else if (ballCollides(paddleRight)) {
+            playerScore++;
+            ball.onCollideWith(paddleRight);
+            Resources.hit.play();
+        } else if (ball.isDead()) {
+            playerScore -= 3;
+            ball.reset();
+        }
 
     }
 
@@ -51,8 +71,14 @@ public class PlayState extends State {
         g.fillRect(paddleRight.getX(), paddleRight.getY(), paddleRight.getWidth(), paddleRight.getHeight());
         //System.out.println("paddleRight: x: " + paddleRight.getX() + "y: " + paddleRight.getY()+ "width: " + paddleRight.getWidth()+ "height: " + paddleRight.getHeight());
 
+        g.drawRect(ball.getX(),ball.getY(),ball.getWidth(),ball.getHeight());
+
         g.setFont(scoreFont);
         g.drawString("" + playerScore,350,40);
+    }
+
+    private boolean ballCollides(Paddle p) {
+        return ball.getRectangle().intersects(p.getRectangle());
     }
 
     @Override

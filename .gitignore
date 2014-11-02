@@ -31,3 +31,5 @@ out/production/PaddleGame/resources/hit.wav
 out/production/PaddleGame/resources/iconimage.png
 out/production/PaddleGame/com/testgame/framework/util/InputHandler.class
 out/production/PaddleBall/com/testgame/game/model/Paddle.class
+out/production/PaddleBall/com/testgame/framework/util/RandomNumberGenerator.class
+out/production/PaddleBall/com/testgame/game/model/Ball.class
